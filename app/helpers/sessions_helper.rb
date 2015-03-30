@@ -5,6 +5,7 @@ module SessionsHelper
     session[:user_id] = user.id
   end
     
+#TODO: Get logout working
   def log_out
     session.delete(:user_id)
     @current_user = nil
