@@ -1,10 +1,11 @@
 class CreateBooks < ActiveRecord::Migration
   def change
+      drop_table :books
     create_table :books do |t|
 
       t.timestamps
-	  t.string :isbn
-	  t.string :name
+      t.string :name
+      t.integer :isbn
     end
   end
 end
