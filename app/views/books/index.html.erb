@@ -1,4 +1,6 @@
 <%= render 'shared/topnav' %>
+<%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+<%= stylesheet_link_tag '/app/assets/stylesheets/application.css' %>
 
 <div class="books">
       <div class="book">
@@ -14,9 +16,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th><%= link_to "Book", :sort => "name" %></th>
-      <th><%= link_to "ISBN", :sort => "ISBN" %></th>
-      <th><%= link_to "Status", :sort => "status" %></th>
+      <th><%= sortable "Name"%></th>
+      <th><%= sortable "ISBN"%></th>
+      <th><%= sortable "Status"%></th>
     </tr>
   </thead>
 
