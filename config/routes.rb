@@ -1,4 +1,10 @@
 Library::Application.routes.draw do
+  get "books/new"
+  get "books/index"
+  get "books/edit"
+  get "users/index"
+  get "users/edit"
+  get "users/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
