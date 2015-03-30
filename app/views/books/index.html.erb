@@ -1,2 +1,34 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<%= render 'shared/topnav' %>
+
+<div class="books">
+      <div class="book">
+        <div class="row">
+          <div class="col-md-2">
+            <h2>Books</h2>
+            <p>Explore our latest categories from around the world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th colspan="3">ISBN</th>
+      <th colspan="3">Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td>
+           <%= category.isbn %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

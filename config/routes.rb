@@ -1,10 +1,12 @@
 Library::Application.routes.draw do
   get "books/new"
-  get "books/index"
+  get "books/index" => "books#index"
   get "books/edit"
-  get "users/index"
-  get "users/edit"
   get "users/new"
+  get "users/login"
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+        
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

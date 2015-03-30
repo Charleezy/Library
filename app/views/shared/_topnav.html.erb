@@ -1,0 +1,11 @@
+<!--=== Top ===-->
+<div class="browse">
+  <div class="container">
+    <ul>
+      <% session[:user_id] = user.id %>
+      <li><%= link_to 'All Book', @index %></li>
+      <li><%= link_to 'New Book', @index %></li>
+      <li><%= link_to 'Change Book Status', @index %></li>
+    </ul>
+  </div>
+</div>
