@@ -1,10 +1,10 @@
 <!--=== Top ===-->
-<%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+<%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
 <div class="browse">
   <div class="container">
     <ul>
       <% user = User.find_by(id: session[:user_id]) %>
-        <% if user.admin?%>
+        <% if user && user.admin?%>
         <%= "signed in as admin" %>
         <% else %>
         <%= "signed in as standard user" %>

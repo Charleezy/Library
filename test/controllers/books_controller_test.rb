@@ -15,5 +15,10 @@ class BooksControllerTest < ActionController::TestCase
     get :edit
     assert_response :success
   end
+    
+  test "index should sort" do
+    books = get(:index, {sort: "name"})
+    assert(books[0].name=="The Little Prince")
+  end
 
 end
