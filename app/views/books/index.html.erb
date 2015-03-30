@@ -5,27 +5,32 @@
         <div class="row">
           <div class="col-md-2">
             <h2>Books</h2>
-            <p>Explore our latest categories from around the world.</p>
+            <p>All the books!</p>
           </div>
         </div>
       </div>
     </div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Book</th>
-      <th colspan="3">ISBN</th>
-      <th colspan="3">Status</th>
+      <th>ISBN</th>
+      <th>Status</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @books.each do |category| %>
+    <% @books.each do |b| %>
       <tr>
-        <td><%= category.name %></td>
         <td>
-           <%= category.isbn %>
+            <%= b.name %>
+        </td>
+        <td>
+            <%= b.isbn %>
+        </td>
+        <td>
+            <%= b.status %>
         </td>
       </tr>
     <% end %>

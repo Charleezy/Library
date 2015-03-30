@@ -5,4 +5,8 @@ class UsersController < ApplicationController
   def login
       @users = User.all
   end
+    
+  def user_params
+  	params.require(:name).permit(:admin)
+  end
 end

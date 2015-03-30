@@ -1,11 +1,17 @@
 <!--=== Top ===-->
+<%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
 <div class="browse">
   <div class="container">
     <ul>
-      <% session[:user_id] = user.id %>
-      <li><%= link_to 'All Book', @index %></li>
-      <li><%= link_to 'New Book', @index %></li>
-      <li><%= link_to 'Change Book Status', @index %></li>
+      <% user = User.find_by(id: session[:user_id]) %>
+        <% if user.admin?%>
+        <%= "signed in as admin" %>
+        <% else %>
+        <%= "signed in as standard user" %>
+      <% end %>
+      <li><%= link_to 'All Books', @index, :class => "btn btn-default" %></li>
+      <!--<li><%= link_to 'New Book', @index %></li>-->
+      <li><%= link_to 'Login', controller: "users", action: "login", :class => "btn btn-default" %></li>
     </ul>
   </div>
 </div>
